@@ -1,6 +1,7 @@
 before_script:
-  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-  - nvm install latest
+  - curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  - apt-get install -y nodejs
+  - apt-get install -y build-essential
   - npm install
 
 start-up:
