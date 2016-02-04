@@ -36,6 +36,30 @@ var commands = {
       bot.sendMessage(msg.channel, "Die in a hole.")
     }
   },
+             "join": {
+                process: function(bot, msg, suffix) {
+                    var query = suffix;
+                    var sender = msg.author.username;
+                        if (!query) {
+                            bot.sendMessage(msg.channel, "Please specify an invite link.");
+                            return;
+                        }
+                        var invite = msg.content.split(" ")[1];
+                        bot.joinServer(invite, function(error, server) {
+                            if (error) {
+                                bot.sendMessage(msg.channel, "Something went wrong. Error code: " + error);
+                            } else {
+                                bot.sendMessage(msg.channel, "Great! I just joined: " + server);
+                                var msgArray = [];
+              msgArray.push("Hi! I'm **" + bot.user.username + "**. I was invited to this server by " + msg.author + ".");
+              msgArray.push("You can use `" + trigger + "help` to see what I can do.");
+              msgArray.push("If you don't want me here, please use the " + AuthDetails.discordjs_trigger + "leave command to get me out.");
+              bot.sendMessage(server.defaultChannel, msgArray);
+              console.log("Joined server: " + server)
+                            }
+                        });
+                    }
+          },
   "hello": {
   process: function(bot, msg) {
   bot.sendMessage(msg.channel, "Hello there! I am CommunityBot, a bot made entirely by the community! Check out my innards here: http://gitlab.com/OneMansGlory/CommunityBot. You can check out what I can do with my help command!")
