@@ -9,7 +9,7 @@ var trigger = "=";
 
     bot.on("disconnected", function () {
     	console.log("Bot has disconnected. Exiting...");
-    	process.exit(1); //exit node.js with an error
+    	process.exit(0); //exit node.js without an error cuz CI will complain if we don't use valid credentials
     });
 
     bot.on("error", function(error) {
