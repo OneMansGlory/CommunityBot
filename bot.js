@@ -38,7 +38,7 @@ var commands = {
   },
   "hello": {
   process: function(bot, msg) {
-  bot.sendMessage(msg.channel, "Hello there! I am CommunityBot, a bot made entirely by the community! Check out my innards here: http://gitlab.com/OneMansGlory/CommunityBot. You can check out what I can do with my help command!)
+  bot.sendMessage(msg.channel, "Hello there! I am CommunityBot, a bot made entirely by the community! Check out my innards here: http://gitlab.com/OneMansGlory/CommunityBot. You can check out what I can do with my help command!")
   }
  },
  "help": {
