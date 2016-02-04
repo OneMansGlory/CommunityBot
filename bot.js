@@ -18,13 +18,11 @@ var trigger = "=";
 
     bot.on("message", function (msg) {
       //Stolen from STAR_BOT
-      msgcount++
       if (msg.content[0] === trigger) {
         var command = msg.content.toLowerCase().split(" ")[0].substring(1);
         var suffix = msg.content.toLowerCase().substring(command.length + 2);
         var cmd = commands[command];
         if (cmd) {
-          cmdcount++
           cmd.process(bot, msg, suffix);
         } if (msg.content === trigger + "ping") {
           bot.sendMessage(msg.channel, "PONG.")
