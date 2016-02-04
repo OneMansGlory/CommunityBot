@@ -1,0 +1,19 @@
+{
+  "name": "CommunityBot",
+  "version": "1.0.0",
+  "description": "A Discord bot",
+  "readme": "README.md",
+  "maintainers": [
+    "Remco (Dougley@wildbeast.space)"
+  ],
+  "author": "Discord Community",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/OneMansGlory/CommunityBot"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "discord.js": "^6.0.0"
+  },
+  "main": "bot.js"
+}
