@@ -5,14 +5,8 @@ before_script:
   - npm install
  
 stages:
-  - build
   - test
   - deploy
-
-constructing:
-  stage: build
-  script:
-    - echo Nothing to do.
 
 investigating:
   stage: test
