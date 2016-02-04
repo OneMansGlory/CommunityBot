@@ -35,7 +35,17 @@ var commands = {
     process: function(bot, msg) {
       bot.sendMessage(msg.channel, "Die in a hole.")
     }
+  },
+  "hello": {
+  process: function(bot, msg) {
+  bot.sendMessage(msg.channel, "Hello there! I am CommunityBot, a bot made entirely by the community! Check out my innards here: http://gitlab.com/OneMansGlory/CommunityBot. You can check out what I can do with my help command!)
   }
+ },
+ "help": {
+ process: function(bot, msg) {
+ bot.sendMessage(msg.channel, "Currently, I am in prealpha stages, and all I can do is respond to ping, pong, hello, and help.")
+ }
+ }
 };
 
 
