@@ -1,9 +1,27 @@
 before_script:
-  - curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  - curl -sL https://deb.nodesource.com/setup_5.x | bash
   - apt-get install -y nodejs
   - apt-get install -y build-essential
   - npm install
+ 
+stages:
+  - build
+  - test
+  - deploy
 
-start-up:
+constructing:
+  stage: build
+  script:
+    - echo Nothing to do.
+
+investigating:
+  stage: test
   script:
     - node bot.js
+
+shipping:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo Nothing to do.
