@@ -6,24 +6,9 @@ before_script:
  
 stages:
   - test
-  - deploy
 
 investigating:
   stage: test
   script:
     - mv config-base.json config.json
     - node bot.js
-
-shipping:
-  stage: deploy
-  only:
-    - master
-  script:
-    - echo Do not steal ma SSH key ktnx
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-    - eval $(ssh-agent -s)
-    - ssh-add <(echo "$SSH_PRIVATE_KEY")
-    - mkdir -p ~/.ssh
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - ssh <(echo "$SSH_HOSTNAME")
-    - cd CommunityBot && git pull && pm2 restart CommunityBoat
