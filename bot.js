@@ -1,8 +1,16 @@
 'use strict';
 
 const Discord = require('discord.js');
-const config = require('./config.json');
+const fs = require('fs');
 const trigger = "=";
+
+try {
+	require('./config.json');
+} catch (e) {
+	console.log("config.json not found. Copying from config-base.json...");
+	fs.writeFileSync('./config.json', fs.readFileSync('./config-base.json'));
+}
+const config = require('./config.json');
 
 let commands = require('./cmd.js').commands;
 let bot = new Discord.Client();
