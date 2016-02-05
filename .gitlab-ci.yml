@@ -19,7 +19,7 @@ shipping:
   only:
     - master
   script:
-    - echo Don't steal ma SSH key ktnx
+    - echo Do not steal ma SSH key ktnx
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$SSH_PRIVATE_KEY")
