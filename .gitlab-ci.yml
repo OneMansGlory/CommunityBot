@@ -11,6 +11,7 @@ stages:
 investigating:
   stage: test
   script:
+    - mv config-base.json config.json
     - node bot.js
 
 shipping:
