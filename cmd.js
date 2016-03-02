@@ -11,6 +11,17 @@ exports.commands = {
 			bot.sendMessage(message.channel, "Die in a hole.");
 		}
 	},
+	    "setgame": {
+      process: function(bot, msg, suffix) {
+          bot.setStatus('online', suffix);
+          bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
+      }
+    },
+                     "johncena": {
+        process: function(bot, msg, suffix) {
+            bot.sendMessage(msg.channel, " **AND HIS NAME IS** https://www.youtube.com/watch?v=4k1xY7v8dDQ");
+        }
+    },
 	"join": {
 		process: function(bot, message, suffix) {
 			let query = suffix;
