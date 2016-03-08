@@ -54,7 +54,7 @@ exports.commands = {
   "eval": {
     process: function(bot, message, suffix) {
       let evalWhitelist = require('./evalwhitelist.json');
-      if (evalWhilelist.indexOf(message.sender.id) > -1) {
+      if (evalWhitelist.indexOf(message.sender.id) > -1) {
         try {
           bot.sendMessage(message, eval(suffix));
         } catch (err) {
