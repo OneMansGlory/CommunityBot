@@ -53,7 +53,7 @@ exports.commands = {
   },
   "eval": {
     process: function(bot, message, suffix) {
-      let evalWhitelist = require('./evalwhilelist.json');
+      let evalWhitelist = require('./evalwhitelist.json');
       if (evalWhilelist.indexOf(message.sender.id) > -1) {
         try {
           bot.sendMessage(message, eval(suffix));
