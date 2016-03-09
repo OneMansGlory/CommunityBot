@@ -32,7 +32,7 @@ bot.on("message", function (message) {
 	let msg = message.content;
 	if (msg[0] === trigger) {
 		let command = msg.toLowerCase().split(" ")[0].substring(1);
-		let suffix = msg.toLowerCase().substring(command.length + 2);
+		let suffix = msg.substring(command.length + 2);
 		if (commands[command]) commands[command].process(bot, message, suffix);
 	}
 });
