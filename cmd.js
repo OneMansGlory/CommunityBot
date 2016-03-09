@@ -48,7 +48,7 @@ exports.commands = {
   },
   "hello": {
     process: function(bot, message) {
-      bot.sendMessage(message.channel, "Hello there! I am CommunityBot, a bot made entirely by the community! Check out my innards here: http://gitlab.com/OneMansGlory/CommunityBot. You can check out what I can do with my help command!")
+      bot.sendMessage(message.channel, "Hello there! I am CommunityBot, a bot made entirely by the community! Check out my innards here: https://github.com/OneMansGlory/CommunityBot.git. You can check out what I can do with my help command!")
     }
   },
   "eval": {
