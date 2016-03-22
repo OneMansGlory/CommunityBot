@@ -8,12 +8,12 @@ exports.commands = {
   },
   "pong": {
     process: function(bot, message) {
-      bot.sendMessage(message.channel, "Die in a hole.");
+      bot.sendMessage(message.channel, "PING");
     }
   },
   "setgame": {
     process: function(bot, msg, suffix) {
-      bot.setStatus('online', suffix);
+      bot.setStatus('online', Prefix: = Playing: suffix);
       bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
     }
   },
