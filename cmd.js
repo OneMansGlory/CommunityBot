@@ -13,7 +13,7 @@ exports.commands = {
   },
   "setgame": {
     process: function(bot, msg, suffix) {
-      bot.setStatus('online', Prefix: = Playing: suffix);
+      bot.setStatus('online', "Prefix: = Playing:" suffix);
       bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
     }
   },
