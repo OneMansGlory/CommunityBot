@@ -20,7 +20,7 @@ exports.commands = {
   "setgame-idle": {
     process: function(bot, msg, suffix) {
       bot.setStatus('idle', "Prefix: = Playing: " + suffix);
-      bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
+      bot.sendMessage(msg.channel, "Done! Now playing: " + suffix "Idle!"
     }
   },
   "johncena": {
