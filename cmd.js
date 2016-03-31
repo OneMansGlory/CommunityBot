@@ -17,6 +17,12 @@ exports.commands = {
       bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
     }
   },
+  "setgame-idle": {
+    process: function(bot, msg, suffix) {
+      bot.setStatus('idle', "Prefix: = Playing: " + suffix);
+      bot.sendMessage(msg.channel, "Done! Now playing: " + suffix + "Idle!")
+    }
+  },
   "johncena": {
     process: function(bot, msg, suffix) {
       bot.sendMessage(msg.channel, " **AND HIS NAME IS** https://www.youtube.com/watch?v=4k1xY7v8dDQ");
