@@ -1,5 +1,7 @@
 'use strict';
 
+const config = require(./config.json)
+
 exports.commands = {
   "ping": {
     process: function(bot, message) {
