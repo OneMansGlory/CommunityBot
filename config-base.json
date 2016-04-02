@@ -1,4 +1,5 @@
 {
-  "prefix": "/="
+  "prefix": "/=",
   "token" : "putlogintokenhere",
+  "oauthid": "null",
 }
