@@ -13,26 +13,14 @@ exports.commands = {
   },
   "setgame": {
     process: function(bot, msg, suffix) {
-      let evalWhitelist = require('./evalwhitelist.json');
-      if (evalWhitelist.indexOf(message.sender.id) > -1) {
-        try {
-          bot.setStatus('online', "Prefix: = Playing: " + suffix);
-          bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
-      } else {
-      	  bot.sendMessage(message, "No permission!");
-       }
-     }
+      bot.setStatus('online', "Prefix: = Playing: " + suffix);
+      bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
+    }
   },
   "setgame-idle": {
     process: function(bot, msg, suffix) {
-      let evalWhitelist = require('./evalwhitelist.json');
-      if (evalWhitelist.indexOf(message.sender.id) > -1) {
-        try {
       bot.setStatus('idle', "Prefix: = Playing: " + suffix);
       bot.sendMessage(msg.channel, "Done! Now playing: " + suffix + "Idle!")
-      } else {
-      	  bot.sendMessage(message, "No permission!");
-       }
     }
   },
   "johncena": {
