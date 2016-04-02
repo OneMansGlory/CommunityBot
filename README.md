@@ -1,4 +1,6 @@
-# CommunityBot
+# CommunityBot Dev
+
+## This version of CommunityBot is supporting token logins. If you want to use username/password, go to the master branch.
 
 CommunityBot; A bot for DiscordApp made entirely by you guys! If you have any experience in coding, you are welcome to browse, copy, (steal) or add to ANY of this!
 
