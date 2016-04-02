@@ -37,4 +37,4 @@ bot.on("message", function (message) {
 	}
 });
 
-bot.loginWithToken(config.token);
+bot.login(config.email, config.password);
