@@ -13,7 +13,7 @@ exports.commands = {
   },
   "setgame": {
     process: function(bot, msg, suffix) {
-      let evalWhitelist = require('./evalwhitelist.json');
+      let evalWhitelist = require('./whitelist.json');
       if (evalWhitelist.indexOf(message.sender.id) > -1) {
         try {
           bot.setStatus('online', "Prefix: = Playing: " + suffix);
@@ -25,7 +25,7 @@ exports.commands = {
   },
   "setgame-idle": {
     process: function(bot, msg, suffix) {
-      let evalWhitelist = require('./evalwhitelist.json');
+      let evalWhitelist = require('./whitelist.json');
       if (evalWhitelist.indexOf(message.sender.id) > -1) {
         try {
       bot.setStatus('idle', "Prefix: = Playing: " + suffix);
@@ -71,7 +71,7 @@ exports.commands = {
   },
   "eval": {
     process: function(bot, message, suffix) {
-      let evalWhitelist = require('./evalwhitelist.json');
+      let evalWhitelist = require('./whitelist.json');
       if (evalWhitelist.indexOf(message.sender.id) > -1) {
         try {
           bot.sendMessage(message, eval(suffix));
