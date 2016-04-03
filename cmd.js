@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require(./config.json)
+const config = require('./config.json');
 
 exports.commands = {
   "ping": {
@@ -50,7 +50,7 @@ exports.commands = {
       }
       let invite = message.content.split(" ")[1];
       bot.sendMessage(message.channel, "It seems you are trying to invite me using an invite link. Use this link instead: https://discordapp.com/oauth2/authorize?client_id=" + config.oauthid + "&scope=bot"); {
-      });
+      };
     }
   },
   "hello": {

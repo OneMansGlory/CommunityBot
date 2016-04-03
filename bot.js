@@ -4,7 +4,7 @@ const config = require('./config.json');
 
 const Discord = require('discord.js');
 const fs = require('fs');
-const trigger = require('config.prefix');
+const trigger = (config.prefix);
 
 try {
 	require('./config.json');
