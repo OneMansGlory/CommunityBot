@@ -17,7 +17,6 @@ exports.commands = {
     process: function(bot, msg, suffix) {
       let evalWhitelist = require('./whitelist.json');
       if (evalWhitelist.indexOf(message.sender.id) > -1) {
-        try {
           bot.setStatus('online', "Prefix: = Playing: " + suffix);
           bot.sendMessage(msg.channel, "Done! Now playing: " + suffix)
       } else {
@@ -29,7 +28,6 @@ exports.commands = {
     process: function(bot, msg, suffix) {
       let evalWhitelist = require('./whitelist.json');
       if (evalWhitelist.indexOf(message.sender.id) > -1) {
-        try {
       bot.setStatus('idle', "Prefix: = Playing: " + suffix);
       bot.sendMessage(msg.channel, "Done! Now playing: " + suffix + "Idle!")
       } else {
