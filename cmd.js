@@ -1,11 +1,56 @@
 'use strict';
 
+    let upvote = 0;
+     let downvote = 0;
+      let voter = [];
+      let votebool = false;
+      let topicstring = "";
+
 const config = require('./config.json');
 
 exports.commands = {
   "ping": {
     process: function(bot, message) {
       bot.sendMessage(message.channel, "PONG");
+    }
+  },
+    "newvote": {
+    process: function (bot, msg, suffix) {
+      if (!suffix) { bot.sendMessage(msg.channel, "Include a suffix please!"); return; }
+      if (votebool == true) { bot.sendMessage(msg, "Theres already a vote pending!"); return; }
+      topicstring = suffix;
+      bot.sendMessage(msg, "New Vote started: `" + suffix + "`\nTo vote say `" + AuthDetails.discordjs_trigger + "vote +/-`");
+      votebool = true;
+    }
+  },
+  "vote": {
+    process: function (bot, msg, suffix) {
+      if (!suffix) { bot.sendMessage(msg, "Gotta vote for something!"); return; }
+      if (votebool == false) { bot.sendMessage(msg, "There is not a vote in progress. Start one with the 'newvote' command."); return; }
+      if (voter.indexOf(msg.author) != -1) { return; }
+      voter.push(msg.author);
+      var vote = suffix.split(" ")[0]
+      if (vote == "+") { upvote += 1; }
+      if (vote == "-") { downvote += 1; }
+    }
+  },
+  "votestatus": {
+    process: function(bot, msg) {
+      var msgArray = [];
+      if (votebool == true) {bot.sendMessage(msg.channel, "There **Is** a vote in progress. Error reading topic string.")}
+        else {
+          bot.sendMessage(msg.channel, "There is currently **not** a vote in progress.")
+        }
+    }
+  },
+  "endvote": {
+    process: function (bot, msg, suffix) {
+      bot.sendMessage(msg, "**Results of last vote:**\nTopic: `" + topicstring + "`\nVotes for: `" + upvote + "`\nVotes against: `" + downvote + "`");
+      upvote = 0;
+      downvote = 0;
+      voter = [];
+      votebool = false;
+      topicstring = "";
     }
   },
   "pong": {
