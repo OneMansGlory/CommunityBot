@@ -14,7 +14,7 @@ exports.commands = {
       bot.sendMessage(message.channel, "PONG");
     }
   },
-    "newvote": {
+  "newvote": {
     process: function (bot, msg, suffix) {
       if (!suffix) { bot.sendMessage(msg.channel, "Include a suffix please!"); return; }
       if (votebool == true) { bot.sendMessage(msg, "Theres already a vote pending!"); return; }
