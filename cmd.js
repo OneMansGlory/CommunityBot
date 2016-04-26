@@ -89,19 +89,8 @@ exports.commands = {
         return;
       }
       let invite = message.content.split(" ")[1];
-      bot.joinServer(invite, function(error, server) {
-        if (error) {
-          bot.sendMessage(message.channel, "Something went wrong. Error code: " + error);
-        } else {
-          bot.sendMessage(message.channel, "Great! I just joined: " + server);
-          let messageArray = [];
-          messageArray.push("Hi! I'm **" + bot.user.username + "**. I was invited to this server by " + message.author + ".");
-          messageArray.push("You can use `" + trigger + "help` to see what I can do.");
-          messageArray.push("If you don't want me here, please use the " + AuthDetails.discordjs_trigger + "leave command to get me out.");
-          bot.sendMessage(server.defaultChannel, messageArray);
-          console.log("Joined server: " + server)
-        }
-      });
+      bot.sendMessage(message.channel, "It seems you are trying to invite me using an invite link. Use this link instead: https://discordapp.com/oauth2/authorize?client_id=" + config.oauthid + "&scope=bot"); {
+      };
     }
   },
   "hello": {
