@@ -1,6 +1,5 @@
 {
   "email" : "foo@bar.net",
-  "password" : "foo"
-  /* Do we really need these? /*
+  "password" : "foo",
   "oauthlink": "oAuth link unavaliable as of the moment, my owner hasn't configured that yet."
 }
