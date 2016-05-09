@@ -36,5 +36,5 @@ bot.on("message", function (message) {
 		if (commands[command]) commands[command].process(bot, message, suffix);
 	}
 });
-
-bot.login(config.email, config.password);
+//GET THE DAMN TOKEN ALREADY
+bot.loginWithToken("token")
